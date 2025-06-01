@@ -10,7 +10,7 @@ let styling = temperature > 20 ? { color: "red" } : { color: "blue" };
 return(
 
     <div>
-        <p>Temprature:<span style={styling}>{temperature}</span>c</p>
+        <p>Temprature:<span style={styling}>{temperature}</span></p>
         <p>Condition:{condition}</p>
     </div>
 )
