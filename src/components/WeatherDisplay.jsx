@@ -1,21 +1,22 @@
 import React from "react";
 
-const WeatherDisplay = (props) => {
-  const temperature = props.obj.temperature;
-  const condition = props.obj.conditions;
+const DisplayWeather = ({ weather }) => {
+  const { temperature, conditions } = weather;
 
-let styling = temperature > 20 ? { color: "red" } : { color: "blue" };
+  const tempStyles = {
+    color: temperature > 20 ? "red" : "blue"   // ✅ Correct logic (red for >20)
+  };
 
-
-return(
-
+  return (
     <div>
-        <p>Temprature:<span style={styling}>{temperature}</span></p>
-        <p>Condition:{condition}</p>
+      <p>
+        Temperature: <span style={tempStyles}>{temperature}</span>
+      </p>
+      <p>
+        Conditions: {conditions}
+      </p>
     </div>
-)
+  );
+};
 
-
-}
-
-export default WeatherDisplay;
+export default DisplayWeather;
